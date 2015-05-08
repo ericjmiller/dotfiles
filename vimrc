@@ -36,6 +36,10 @@ set bs=2
 filetype off
 syntax on
 
+set incsearch " search as characters are entered
+set hlsearch " highlight matches
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "   02. Addons .................. Vundle addons and addon settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,7 +105,7 @@ autocmd InsertLeave * if pumvisible() ==0|pclose|endif
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"   02. Events .................. General autocmd events
+"   03. Events .................. General autocmd events
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Automatic reloading of .vimrc
@@ -109,7 +113,7 @@ autocmd! bufwritepost .vimrc source %
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-"   03. Theme/Colors ............ Colors, fonts, etc.
+"   04. Theme/Colors ............ Colors, fonts, etc.
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Font
@@ -123,8 +127,6 @@ augroup vimrc_autocmds
     autocmd FileType python set nowrap
     augroup END
 
-set showmatch " highlight pair of {} [] and ()
-
 let python_highlight_all = 1 " Enable all python syntax highlghting features
 
 " Show whitespace after line
@@ -137,11 +139,28 @@ colorscheme jellybeans
 set t_Co=256
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"   04. Vim UI .................. User interface behavior
+"   05. Vim UI .................. User interface behavior
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set number " show line numbers
+
+set cursorline " highlight current line
+
+set wildmenu " visual autocomplete for command menu
+
+set lazyredraw " redraw only when we need to
+
+set showmatch " highlight pair of {} [] and ()
+
+" fold settings
+set foldenable " enable folding
+set foldlevelstart=10 " open most folds by default
+set foldnestmax=10 " 10 nested fold max
+set foldmethod=indent " fold based on indent level
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"   05. Text Formatting/Layout .. Text, tab, indentation related
+"   06. Text Formatting/Layout .. Text, tab, indentation related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Tabs
@@ -152,7 +171,6 @@ set autoindent
 set smartindent
 
 " Show line numbers and length
-set number " show line numbers
 set tw=119 " width of document
 set nowrap " don't automatically wrap text on load
 set fo-=t " don't automatically wrap text when typing
@@ -161,7 +179,7 @@ highlight ColorColumn ctermbg=233
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"   06. Custom Commands ......... Any custom command aliases
+"   07. Custom Commands ......... Any custom command aliases
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Better copy and paste
@@ -172,12 +190,12 @@ set clipboard=unnamed
 let mapleader = ","
 
 " Bind nohl : Removes highlight of your last search
-noremap <C-n> :nohl<CR>
-vnoremap <C-n> :nohl<CR>
-inoremap <C-n> :nohl<CR>
+noremap <leader><space> :nohl<CR>
+vnoremap <leader><space> :nohl<CR>
+inoremap <leader><space> :nohl<CR>
 
 " Quicksave command - revise
-noremap <Leader>Z :update<CR>
+noremap <Leader>z :update<CR>
 vnoremap <C-Z> <C-C>:update<CR>
 inoremap <C-Z> <C-O>:update<CR>
 

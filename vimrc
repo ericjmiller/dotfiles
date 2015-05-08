@@ -95,13 +95,19 @@ let g:powerline_symbols = "fancy"
 set guifont = "Source Code pro for Powerline:h10"
 let g:airline_theme = "sol"
 
-"Python Mode
+" Python Mode
 filetype off
 let g:pymode_options_max_line_length = 120
 
 " Omni-Completion tip window to close when a selection is made
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() ==0|pclose|endif
+
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -186,18 +192,19 @@ highlight ColorColumn ctermbg=233
 set pastetoggle=<F2>
 set clipboard=unnamed
 
-"Rebind <Leader> key
+" Rebind <Leader> key
 let mapleader = ","
+
+inoremap jk <esc> " jk is escape
+
+nnoremap <leader>u :GundoToggle<CR> " toggle Gundo - super undo
 
 " Bind nohl : Removes highlight of your last search
 noremap <leader><space> :nohl<CR>
 vnoremap <leader><space> :nohl<CR>
 inoremap <leader><space> :nohl<CR>
 
-" Quicksave command - revise
-noremap <Leader>z :update<CR>
-vnoremap <C-Z> <C-C>:update<CR>
-inoremap <C-Z> <C-O>:update<CR>
+nnoremap <leader>s :w<CR> " save session
 
 " Quick quit command
 noremap <Leader>e :quit<CR>  " Quit current window
@@ -221,3 +228,11 @@ vnoremap <Leader>s :sort<CR>
 " i.e. better indention
 vnoremap < <gv 
 vnoremap > >gv 
+
+" Movement commands
+nnoremap B ^
+nnoremap E $
+nnoremap $ <nop> " for retraining purposes
+nnoremap ^ <nop> " for retraining purposes
+
+nnoremap gV `[v`] " highlights last inserted text

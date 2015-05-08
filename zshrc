@@ -87,3 +87,6 @@ BASE16_SHELL="$HOME/dotfiles/colorschemes/base16-shell/base16-default.dark.sh"
 
 # set $EDITOR for tmuxinator
 export EDITOR=vim
+
+# verify that tmux.conf is loaded correctly (had problems in past)
+tmux source-file ~/.tmux.conf

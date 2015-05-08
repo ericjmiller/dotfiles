@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/emiller/test/test'
-let g:netrw_dirhist_2='/home/emiller/Dropbox/tmobile/switcher_qc/style/stylelib'
-let g:netrw_dirhist_3='/home/emiller/solarized/gnome-terminal-colors-solarized'
-let g:netrw_dirhist_4='/home/emiller/Dropbox/tmobile/TNS/results/capture'
-let g:netrw_dirhist_5='/home/emiller/influxdb-python'

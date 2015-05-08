@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/emiller/.oh-my-zsh
+export ZSH=/home/emiller/dotfiles/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -82,5 +82,8 @@ source $ZSH/oh-my-zsh.sh
 # END oh-my-zsh
 
 # ZSH Colorscheme
-BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+BASE16_SHELL="$HOME/dotfiles/colorschemes/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# set $EDITOR for tmuxinator
+export EDITOR=vim

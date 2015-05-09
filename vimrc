@@ -47,7 +47,7 @@ set hlsearch " highlight matches
 " Vundle / Addins
 filetype off
 set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+call vundle#begin()
 
 " Vundle package : Vim package manager (:PluginInstall)
 Plugin 'gmarik/vundle'

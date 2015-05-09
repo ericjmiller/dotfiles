@@ -1,3 +1,8 @@
 #!/bin/bash
 
-# create symlinks for all files / directories in ~/dotfiles
+for file in $HOME/dotfiles/*; do
+    if [ -e $HOME/.$(basename $file)]; then
+        rm $HOME/.$(basename $file)
+    fi
+    ln -s $file $HOME/.$(basename $file)
+done

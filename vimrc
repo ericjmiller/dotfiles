@@ -56,8 +56,6 @@ Plugin 'gmarik/vundle'
 Plugin 'klen/python-mode'
 
 " Colorscheme
-Plugin 'gmarik/ingretu'
-Plugin 'nanotech/jellybeans.vim'
 
 " Powerline
 Plugin 'bling/vim-airline'
@@ -141,7 +139,7 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertLeave *match ExtraWhitespace /\s\+$/
 
 " Color Settings
-colorscheme jellybeans
+" colorscheme base16-atelierheath
 set t_Co=256
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -236,3 +234,7 @@ nnoremap $ <nop> " for retraining purposes
 nnoremap ^ <nop> " for retraining purposes
 
 nnoremap gV `[v`] " highlights last inserted text
+
+
+" Always end with enabling syntax - it sometimes gets turned off on the way
+syntax enable

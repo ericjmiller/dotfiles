@@ -95,7 +95,10 @@ let g:airline_theme = "sol"
 
 " Python Mode
 filetype off
+let g:pymode = 1
 let g:pymode_options_max_line_length = 120
+let g:pymode_options = 1
+setlocal textwidth=120
 
 " Omni-Completion tip window to close when a selection is made
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
@@ -148,7 +151,7 @@ set t_Co=256
 
 set number " show line numbers
 
-set cursorline " highlight current line
+" set cursorline " highlight current line
 
 set wildmenu " visual autocomplete for command menu
 
@@ -198,9 +201,9 @@ inoremap jk <esc> " jk is escape
 nnoremap <leader>u :GundoToggle<CR> " toggle Gundo - super undo
 
 " Bind nohl : Removes highlight of your last search
-noremap <leader><space> :nohl<CR>
-vnoremap <leader><space> :nohl<CR>
-inoremap <leader><space> :nohl<CR>
+noremap <leader>c :nohl<CR>
+vnoremap <leader>c :nohl<CR>
+inoremap <leader>c :nohl<CR>
 
 nnoremap <leader>s :w<CR> " save session
 

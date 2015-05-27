@@ -90,3 +90,7 @@ export EDITOR=vim
 
 # verify that tmux.conf is loaded correctly (had problems in past)
 tmux source-file ~/.tmux.conf
+
+# python virtualenvwrapper settings
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh

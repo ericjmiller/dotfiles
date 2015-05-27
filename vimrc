@@ -39,6 +39,10 @@ syntax on
 set incsearch " search as characters are entered
 set hlsearch " highlight matches
 
+" Allow project-specific .vimrc files (looks at project root)
+set exrc
+set secure
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "   02. Addons .................. Vundle addons and addon settings
@@ -98,6 +102,7 @@ filetype off
 let g:pymode = 1
 let g:pymode_options_max_line_length = 120
 let g:pymode_options = 1
+let g:pymode_folding = 1
 setlocal textwidth=120
 
 " Omni-Completion tip window to close when a selection is made
@@ -161,8 +166,6 @@ set showmatch " highlight pair of {} [] and ()
 
 " fold settings
 set foldenable " enable folding
-set foldlevelstart=10 " open most folds by default
-set foldnestmax=10 " 10 nested fold max
 set foldmethod=indent " fold based on indent level
 
 
